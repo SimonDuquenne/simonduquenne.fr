@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simon Duquenne · Technicien Réseaux & IT</title>
+  <meta name="description" content="Simon Duquenne, technicien en informatique et réseaux, BTS CIEL en cours au CNPE de Penly. Disponible à partir de septembre 2026."/>
+  <meta name="keywords" content="Simon Duquenne, informatique, réseau, technicien réseau, BTS CIEL, CNPE Penly, EDF, SDIS28"/>
+  <meta name="author" content="Simon Duquenne"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://simonduquenne.fr"/>
+  <meta property="og:title" content="Simon Duquenne · Technicien Réseaux & IT"/>
+  <meta property="og:description" content="Portfolio de Simon Duquenne, technicien réseaux & IT, disponible septembre 2026."/>
+  <meta property="og:type" content="profile"/>
+  <meta name="theme-color" content="#09090e"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Simon Duquenne","jobTitle":"Technicien Réseaux & IT","url":"https://simonduquenne.fr","email":"simon.duquenne@email.com","knowsAbout":["Réseaux informatiques","Administration système","Support IT","Transmissions radio","Environnements industriels"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#09090e;
+      --s1:#101018;
+      --border:rgba(255,255,255,0.08);
+      --vio:#7c5af0;
+      --vio-l:#b09bff;
+      --vio-dim:rgba(124,90,240,0.1);
+      --txt:#d8d5ee;
+      --txt-m:#65617e;
+      --txt-d:#2e2c3e;
+      --sans:'Inter',sans-serif;
+      --mono:'JetBrains Mono',monospace;
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:0 4rem;height:56px;
+      background:rgba(9,9,14,0.88);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+    .logo{font-family:var(--mono);font-size:0.82rem;font-weight:500;color:var(--txt);text-decoration:none;letter-spacing:0.04em}
+    .logo span{color:var(--vio-l)}
+    nav{display:flex;gap:2.5rem;align-items:center}
+    nav a{font-size:0.78rem;color:var(--txt-m);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s}
+    nav a:hover{color:var(--txt)}
+    .nav-cta{font-size:0.75rem;padding:5px 14px;border-radius:3px;border:1px solid rgba(124,90,240,0.35)!important;color:var(--vio-l)!important}
+    .nav-cta:hover{background:var(--vio-dim)}
+
+    #hero{min-height:100vh;display:flex;align-items:center;padding:56px 4rem 0}
+    .hero-inner{max-width:780px;padding:4rem 0}
+    .hero-pre{
+      font-family:var(--mono);font-size:0.72rem;color:var(--txt-m);
+      letter-spacing:0.12em;text-transform:uppercase;
+      margin-bottom:1.6rem;display:flex;align-items:center;gap:10px;
+    }
+    .hero-pre::before{content:'';width:20px;height:1px;background:var(--vio)}
+    h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;letter-spacing:-0.02em;line-height:1.12;color:var(--txt);margin-bottom:1.4rem}
+    h1 strong{font-weight:500;color:#fff;display:block}
+    h1 em{font-style:italic;color:var(--txt-m);font-weight:300;font-size:0.75em}
+    .hero-desc{font-size:0.93rem;color:var(--txt-m);font-weight:300;max-width:540px;line-height:1.75;margin-bottom:2rem}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2.2rem}
+    .chip{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.04em;padding:4px 11px;border-radius:3px;background:transparent;border:1px solid var(--border);color:var(--txt-m)}
+    .chip.hi{border-color:rgba(124,90,240,0.5);color:var(--vio-l);background:var(--vio-dim)}
+    .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:7px;padding:0.6rem 1.4rem;border-radius:4px;font-family:var(--sans);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.18s;letter-spacing:0.01em}
+    .btn-fill{background:var(--vio);color:#fff;border:1px solid var(--vio)}
+    .btn-fill:hover{background:#9374f5}
+    .btn-line{background:transparent;color:var(--txt);border:1px solid var(--border)}
+    .btn-line:hover{border-color:rgba(124,90,240,0.4);color:var(--vio-l)}
+
+    .section{max-width:860px;margin:0 auto;padding:5.5rem 4rem;border-top:1px solid var(--border)}
+    .section-head{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:3rem}
+    .section-kw{font-family:var(--mono);font-size:0.65rem;color:var(--txt-d);letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap}
+    .section-line{flex:1;height:1px;background:var(--border)}
+
+    /* EXPÉRIENCES */
+    .exp-list{display:flex;flex-direction:column}
+    .exp{display:grid;grid-template-columns:56px 1fr;gap:0 2rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+    .exp:last-child{border-bottom:none}
+    .exp-n{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);letter-spacing:0.05em;padding-top:3px}
+    .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.6rem}
+    .exp-role{font-size:0.93rem;font-weight:500;color:#fff}
+    .exp-where{font-size:0.78rem;color:var(--vio-l);font-weight:400;margin-top:2px}
+    .exp-period{font-family:var(--mono);font-size:0.65rem;color:var(--txt-d);white-space:nowrap;padding-top:4px}
+    .exp-desc{font-size:0.83rem;color:var(--txt-m);font-weight:300;line-height:1.7;max-width:580px}
+    .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.9rem}
+    .tag{font-family:var(--mono);font-size:0.62rem;padding:2px 7px;border-radius:2px;background:var(--vio-dim);color:var(--vio-l);border:1px solid rgba(124,90,240,0.18)}
+
+    /* PROJET */
+    .project-card{
+      background:var(--s1);border:1px solid var(--border);border-radius:6px;
+      padding:2rem;transition:border-color 0.2s;
+    }
+    .project-card:hover{border-color:rgba(124,90,240,0.35)}
+    .project-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
+    .project-title{font-size:0.95rem;font-weight:500;color:#fff;margin-bottom:4px}
+    .project-context{font-size:0.75rem;color:var(--vio-l);font-family:var(--mono);letter-spacing:0.04em}
+    .project-badge{
+      font-family:var(--mono);font-size:0.6rem;padding:3px 9px;border-radius:2px;
+      border:1px solid rgba(124,90,240,0.35);color:var(--vio-l);white-space:nowrap;
+      align-self:flex-start;
+    }
+    .project-desc{font-size:0.83rem;color:var(--txt-m);font-weight:300;line-height:1.7;max-width:600px}
+    .project-details{
+      margin-top:1.2rem;padding-top:1.2rem;
+      border-top:1px solid var(--border);
+      display:flex;flex-direction:column;gap:0.5rem;
+    }
+    .detail-row{display:flex;gap:1rem;font-size:0.8rem}
+    .detail-k{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);width:100px;flex-shrink:0;letter-spacing:0.05em;padding-top:1px}
+    .detail-v{color:var(--txt-m);font-weight:300}
+
+    /* FORMATION */
+    .edu-list{display:flex;flex-direction:column}
+    .edu{display:grid;grid-template-columns:56px 1fr;gap:0 2rem;padding:1.4rem 0;border-bottom:1px solid var(--border);align-items:center}
+    .edu:last-child{border-bottom:none}
+    .edu-dot{width:7px;height:7px;border-radius:50%;background:var(--border);border:1px solid var(--txt-d);margin:auto}
+    .edu-dot.on{background:var(--vio-dim);border-color:var(--vio)}
+    .edu-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+    .edu-name{font-size:0.88rem;font-weight:500;color:var(--txt)}
+    .edu-sub{font-size:0.78rem;color:var(--txt-m);font-weight:300;margin-top:2px}
+    .edu-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+    .edu-yr{font-family:var(--mono);font-size:0.65rem;color:var(--txt-d)}
+    .badge{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.04em;padding:2px 8px;border-radius:2px;border:1px solid var(--border);color:var(--txt-d)}
+    .badge.on{border-color:rgba(124,90,240,0.45);color:var(--vio-l);background:var(--vio-dim)}
+
+    /* COMPÉTENCES */
+    .skills-block{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem}
+    .sg-title{font-family:var(--mono);font-size:0.62rem;color:var(--vio);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem}
+    .sg-items{display:flex;flex-direction:column;gap:6px}
+    .sk{font-size:0.82rem;color:var(--txt-m);font-weight:300;display:flex;align-items:center;gap:9px}
+    .sk::before{content:'';width:4px;height:1px;background:var(--vio);flex-shrink:0}
+
+    /* CONTACT */
+    .contact-block{display:flex;flex-direction:column}
+    .ct-row{display:flex;align-items:center;gap:2rem;padding:1rem 0;border-bottom:1px solid var(--border);text-decoration:none}
+    .ct-row:last-child{border-bottom:none}
+    .ct-k{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);width:80px;flex-shrink:0;letter-spacing:0.06em}
+    .ct-v{font-size:0.85rem;color:var(--txt);transition:color 0.2s}
+    a.ct-row:hover .ct-v{color:var(--vio-l)}
+
+    .cv-strip{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem;padding:1.6rem 2rem;background:var(--s1);border:1px solid var(--border);border-radius:5px}
+    .cv-strip-text h3{font-size:0.9rem;font-weight:500;color:var(--txt)}
+    .cv-strip-text p{font-size:0.78rem;color:var(--txt-m);font-weight:300;margin-top:3px}
+
+    footer{border-top:1px solid var(--border);padding:1.4rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);letter-spacing:0.06em}
+
+    /* CURSEUR */
+    @media(pointer:fine){
+      *{cursor:none!important}
+      #cur{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--vio);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .15s}
+      #cur-ring{position:fixed;top:0;left:0;width:32px;height:32px;border:1px solid rgba(176,155,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s}
+      body.hovering #cur{width:14px;height:14px;background:var(--vio-l)}
+      body.hovering #cur-ring{width:44px;height:44px;opacity:.6}
+    }
+
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+    .reveal.in{opacity:1;transform:none}
+      header{padding:0 1.5rem}
+      nav{gap:1.2rem}
+      .nav-cta{display:none}
+      #hero,.section{padding-left:1.5rem;padding-right:1.5rem}
+      .exp,.edu{grid-template-columns:1fr;gap:0.5rem}
+      .exp-n,.edu-dot{display:none}
+      .skills-block{grid-template-columns:1fr}
+      footer{padding:1.2rem 1.5rem;flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<header>
+  <a href="#hero" class="logo">SDQN<span>_</span></a>
+  <nav>
+    <a href="#experience">Expériences</a>
+    <a href="#projets">Projets</a>
+    <a href="#formation">Formation</a>
+    <a href="#competences">Compétences</a>
+    <a href="#contact">Contact</a>
+    <a href="#cv" class="nav-cta">CV →</a>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-pre">Technicien Réseaux & IT</div>
+    <h1>
+      <strong>Simon Duquenne</strong>
+      <em>Réseaux · Systèmes · Environnements exigeants</em>
+    </h1>
+    <p class="hero-desc">
+      Étudiant en BTS CIEL au CNPE de Penly (EDF), formé sur des infrastructures virtualisées et des réseaux industriels en milieu nucléaire.
+      Rigoureux, autonome, habitué à travailler dans des contextes où la disponibilité et la sécurité ne se négocient pas.
+    </p>
+    <div class="hero-chips">
+      <span class="chip">BTS CIEL option A · CNPE Penly</span>
+      <span class="chip">SPV · SDIS 28</span>
+      <span class="chip hi">Disponible sept. 2026</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#cv" class="btn btn-fill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Mon CV
+      </a>
+      <a href="#contact" class="btn btn-line">Me contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPÉRIENCES -->
+<div class="section reveal" id="experience">
+  <div class="section-head">
+    <span class="section-kw">// parcours</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="exp-list">
+
+    <div class="exp">
+      <div class="exp-n">01</div>
+      <div class="exp-content">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">BTS CIEL — Formation en alternance</div>
+            <div class="exp-where">EDF · CNPE de Penly</div>
+          </div>
+          <span class="exp-period">2024 – 2026</span>
+        </div>
+        <div class="exp-desc">Formation en milieu industriel nucléaire au sein du Centre Nucléaire de Production d'Électricité de Penly. Travail sur des infrastructures réseau réelles dans un environnement soumis à des exigences strictes de sécurité et de disponibilité.</div>
+        <div class="tags">
+          <span class="tag">Réseau industriel</span>
+          <span class="tag">Infrastructure</span>
+          <span class="tag">Environnement critique</span>
+          <span class="tag">EDF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-n">02</div>
+      <div class="exp-content">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Sapeur-Pompier Volontaire — Équipier secouriste</div>
+            <div class="exp-where">SDIS 28 · CIS La Loupe</div>
+          </div>
+          <span class="exp-period">Juil. 2024 → présent</span>
+        </div>
+        <div class="exp-desc">Engagement volontaire en parallèle de la formation. Interventions en équipe dans des situations d'urgence — développement du sang-froid et de la rigueur opérationnelle.</div>
+        <div class="tags">
+          <span class="tag">Travail d'équipe</span>
+          <span class="tag">Rigueur</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-n">03</div>
+      <div class="exp-content">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Stage — Transmissions & Support IT</div>
+            <div class="exp-where">SDIS 28 · Service Transmissions</div>
+          </div>
+          <span class="exp-period">Juin – Juil. 2023</span>
+        </div>
+        <div class="exp-desc">Maintenance et réparation des équipements radio VHF/UHF et bips d'alerte. Support informatique, câblage réseau et administration des systèmes dans un contexte opérationnel à fortes contraintes.</div>
+        <div class="tags">
+          <span class="tag">Radio VHF/UHF</span>
+          <span class="tag">Électronique</span>
+          <span class="tag">Support IT</span>
+          <span class="tag">Câblage</span>
+          <span class="tag">Administration</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp">
+      <div class="exp-n">04</div>
+      <div class="exp-content">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Stage — Service Informatique</div>
+            <div class="exp-where">Conseil Départemental 28 · DSI</div>
+          </div>
+          <span class="exp-period">2022 – 2024 (Bac Pro)</span>
+        </div>
+        <div class="exp-desc">Stages répartis sur le cursus Bac Pro SN. Support utilisateurs N1/N2, câblage réseau, déploiement et administration des postes et équipements réseau.</div>
+        <div class="tags">
+          <span class="tag">Support N1/N2</span>
+          <span class="tag">Réseau</span>
+          <span class="tag">Câblage</span>
+          <span class="tag">Administration</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROJETS -->
+<div class="section reveal" id="projets">
+  <div class="section-head">
+    <span class="section-kw">// projets</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="project-card">
+    <div class="project-top">
+      <div>
+        <div class="project-title">Infrastructure haute disponibilité — CNPE de Penly</div>
+        <div class="project-context">EDF · BTS CIEL option A · Session 2026</div>
+      </div>
+      <span class="project-badge">Projet d'alternance</span>
+    </div>
+    <div class="project-desc">
+      Conception et déploiement d'une infrastructure virtualisée hautement disponible pour des applications métier critiques en site nucléaire. Le projet couvre l'architecture serveur, la segmentation réseau, la supervision et la sécurité — réalisé en autonomie dans un environnement industriel soumis à des exigences strictes de disponibilité et de traçabilité.
+    </div>
+    <div class="project-details">
+      <div class="detail-row">
+        <span class="detail-k">Contexte</span>
+        <span class="detail-v">Site nucléaire en production (EDF / CNPE Penly) — service SI industriel</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-k">Périmètre</span>
+        <span class="detail-v">Virtualisation, haute disponibilité, segmentation réseau, sécurité en profondeur, supervision</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-k">Livrable</span>
+        <span class="detail-v">Infrastructure déployée + documentation d'exploitation complète</span>
+      </div>
+    </div>
+    <div class="tags" style="margin-top:1.2rem">
+      <span class="tag">Virtualisation</span>
+      <span class="tag">Haute disponibilité</span>
+      <span class="tag">VLAN</span>
+      <span class="tag">Cybersécurité</span>
+      <span class="tag">Supervision</span>
+      <span class="tag">Milieu industriel</span>
+      <span class="tag">Documentation</span>
+    </div>
+  </div>
+</div>
+
+<!-- FORMATION -->
+<div class="section reveal" id="formation">
+  <div class="section-head">
+    <span class="section-kw">// formation</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="edu-list">
+    <div class="edu">
+      <div class="edu-dot on"></div>
+      <div style="width:100%">
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">BTS CIEL — Option A (Systèmes numériques)</div>
+            <div class="edu-sub">CNPE Penly · EDF</div>
+          </div>
+          <div class="edu-right">
+            <span class="edu-yr">2024 – 2026</span>
+            <span class="badge on">En cours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-dot"></div>
+      <div style="width:100%">
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Bac Pro Systèmes Numériques (SN)</div>
+            <div class="edu-sub">Réseaux Informatiques & Systèmes Communicants</div>
+          </div>
+          <div class="edu-right">
+            <span class="edu-yr">2022 – 2024</span>
+            <span class="badge">Obtenu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-dot"></div>
+      <div style="width:100%">
+        <div class="edu-row">
+          <div>
+            <div class="edu-name">Brevet de Jeune Sapeur-Pompier</div>
+            <div class="edu-sub">SDIS 28</div>
+          </div>
+          <div class="edu-right">
+            <span class="badge">Certifié</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPÉTENCES -->
+<div class="section reveal" id="competences">
+  <div class="section-head">
+    <span class="section-kw">// compétences</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="skills-block">
+    <div class="sg">
+      <div class="sg-title">Réseaux</div>
+      <div class="sg-items">
+        <div class="sk">TCP/IP, subnetting</div>
+        <div class="sk">VLAN, switching, routage</div>
+        <div class="sk">VPN, firewall</div>
+        <div class="sk">Câblage (RJ45, baie de brassage)</div>
+        <div class="sk">Wi-Fi, LAN/WAN</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-title">Systèmes & Virtualisation</div>
+      <div class="sg-items">
+        <div class="sk">Proxmox VE, clustering</div>
+        <div class="sk">Windows Server, Active Directory</div>
+        <div class="sk">Linux (bases)</div>
+        <div class="sk">Support N1/N2</div>
+        <div class="sk">Déploiement & administration postes</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-title">Transmissions</div>
+      <div class="sg-items">
+        <div class="sk">Radio VHF/UHF</div>
+        <div class="sk">Électronique, diagnostic</div>
+        <div class="sk">Maintenance matériel</div>
+      </div>
+    </div>
+    <div class="sg">
+      <div class="sg-title">Transversal</div>
+      <div class="sg-items">
+        <div class="sk">Cybersécurité industrielle</div>
+        <div class="sk">Supervision & monitoring</div>
+        <div class="sk">Réactivité & sang-froid</div>
+        <div class="sk">Travail en équipe</div>
+        <div class="sk">Documentation technique</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CV -->
+<div class="section reveal" id="cv">
+  <div class="section-head">
+    <span class="section-kw">// cv</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="cv-strip">
+    <div class="cv-strip-text">
+      <h3>Curriculum Vitæ</h3>
+      <p>Détail complet du parcours, formations et références.</p>
+    </div>
+    <a href="cv-simon-duquenne.pdf" download class="btn btn-fill">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Télécharger (PDF)
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section reveal" id="contact">
+  <div class="section-head">
+    <span class="section-kw">// contact</span>
+    <span class="section-line"></span>
+  </div>
+  <div class="contact-block">
+    <a href="mailto:simon.duquenne@email.com" class="ct-row">
+      <span class="ct-k">email</span>
+      <span class="ct-v">simon.duquenne@email.com</span>
+    </a>
+    <a href="https://linkedin.com/in/simonduquenne" target="_blank" class="ct-row">
+      <span class="ct-k">linkedin</span>
+      <span class="ct-v">linkedin.com/in/simonduquenne</span>
+    </a>
+    <div class="ct-row">
+      <span class="ct-k">dispo</span>
+      <span class="ct-v">Septembre 2026 — CDI / Alternance</span>
+    </div>
+    <div class="ct-row">
+      <span class="ct-k">mobilité</span>
+      <span class="ct-v">Seine-Maritime & Eure-et-Loir — ouvert aux opportunités</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2025 Simon Duquenne</span>
+  <span>simon duquenne · technicien réseaux & it</span>
+</footer>
+
+<script>
+  // Reveal au scroll
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting) e.target.classList.add('in');
+  }), {threshold:0.06});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Curseur personnalisé (desktop uniquement)
+  const cur = document.getElementById('cur');
+  const ring = document.getElementById('cur-ring');
+  if(cur && window.matchMedia('(pointer:fine)').matches){
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+    (function loop(){
+      cur.style.left=mx+'px'; cur.style.top=my+'px';
+      rx+=(mx-rx)*0.1; ry+=(my-ry)*0.1;
+      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      requestAnimationFrame(loop);
+    })();
+    const hoverables = 'a, button, .btn, .project-card, .exp, .edu, .ct-row';
+    document.querySelectorAll(hoverables).forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+    });
+  }
+</script>
+</body>
+</html>

@@ -10,10 +10,10 @@ Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudi
 
 - **Parcours professionnel** — expériences en milieu industriel nucléaire, transmissions et support IT
 - **Projet BTS** — infrastructure haute disponibilité déployée au CNPE de Penly (EDF)
-- **Formation** — BTS CIEL option A, Bac Pro SN, BJSP
+- **Formation** — BTS CIEL option A (Lycée Sully), Bac Pro SN (Lycée Sully), BJSP
 - **Compétences** — réseaux, systèmes & virtualisation, transmissions, cybersécurité industrielle
 - **CV** — téléchargeable en PDF (à venir)
-- **Contact** — email, LinkedIn, mobilité, permis B
+- **Contact** — email, téléphone, LinkedIn, disponibilité, mobilité, permis B
 
 ---
 
@@ -42,13 +42,14 @@ simonduquenne.fr/
 
 Le site est déployé automatiquement via **GitHub Pages** à chaque push sur la branche `main`.
 
-Pour mettre à jour le site, il suffit de remplacer `index.html` dans le dépôt.
+Pour mettre à jour le site, remplacer `index.html` dans le dépôt.
 
 ---
 
 ## Contact
 
 📧 simon.duquenne60@gmail.com  
+📱 07 67 17 07 62  
 🔗 [linkedin.com/in/simon-duquenne60](https://www.linkedin.com/in/simon-duquenne60/)
 
 ---

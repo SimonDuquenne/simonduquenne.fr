@@ -142,6 +142,11 @@
     .ct-k{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);width:80px;flex-shrink:0;letter-spacing:0.06em}
     .ct-v{font-size:0.85rem;color:var(--vio-l);transition:color 0.2s}
     a.ct-row:hover .ct-v{color:#fff}
+    .ct-tabs{display:flex;gap:6px;margin-bottom:1.5rem}
+    .ct-tab{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;padding:5px 14px;border-radius:3px;border:1px solid var(--border);color:var(--txt-d);background:transparent;cursor:pointer;transition:all 0.2s}
+    .ct-tab.active{border-color:rgba(124,90,240,0.45);color:var(--vio-l);background:var(--vio-dim)}
+    .ct-panel{display:none}
+    .ct-panel.active{display:flex;flex-direction:column}
 
     .cv-strip{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem;padding:1.6rem 2rem;background:var(--s1);border:1px solid var(--border);border-radius:5px}
     .cv-strip-text h3{font-size:0.9rem;font-weight:500;color:var(--txt)}
@@ -472,27 +477,42 @@
     <span class="section-kw">// contact</span>
     <span class="section-line"></span>
   </div>
+  <div class="ct-tabs">
+    <button class="ct-tab active" onclick="switchTab('ct-coords')">Coordonnées</button>
+    <button class="ct-tab" onclick="switchTab('ct-infos')">Disponibilité</button>
+  </div>
   <div class="contact-block">
-    <a href="mailto:simon.duquenne60@gmail.com" class="ct-row">
-      <span class="ct-k">email</span>
-      <span class="ct-v">simon.duquenne60@gmail.com</span>
-    </a>
-    <a href="https://www.linkedin.com/in/simon-duquenne60/" target="_blank" class="ct-row">
-      <span class="ct-k">linkedin</span>
-      <span class="ct-v">linkedin.com/in/simon-duquenne60</span>
-    </a>
-    <div class="ct-row">
-      <span class="ct-k">dispo</span>
-      <span class="ct-v">Septembre 2026</span>
+
+    <div class="ct-panel active" id="ct-coords">
+      <a href="mailto:simon.duquenne60@gmail.com" class="ct-row">
+        <span class="ct-k">email</span>
+        <span class="ct-v">simon.duquenne60@gmail.com</span>
+      </a>
+      <a href="tel:+33767170762" class="ct-row">
+        <span class="ct-k">téléphone</span>
+        <span class="ct-v">07 67 17 07 62</span>
+      </a>
+      <a href="https://www.linkedin.com/in/simon-duquenne60/" target="_blank" class="ct-row">
+        <span class="ct-k">linkedin</span>
+        <span class="ct-v">linkedin.com/in/simon-duquenne60</span>
+      </a>
     </div>
-    <div class="ct-row">
-      <span class="ct-k">mobilité</span>
-      <span class="ct-v">Seine-Maritime & Eure-et-Loir — ouvert aux opportunités</span>
+
+    <div class="ct-panel" id="ct-infos">
+      <div class="ct-row">
+        <span class="ct-k">dispo</span>
+        <span class="ct-v">Septembre 2026</span>
+      </div>
+      <div class="ct-row">
+        <span class="ct-k">mobilité</span>
+        <span class="ct-v">Seine-Maritime & Eure-et-Loir — ouvert aux opportunités</span>
+      </div>
+      <div class="ct-row">
+        <span class="ct-k">permis</span>
+        <span class="ct-v">Permis B — véhiculé</span>
+      </div>
     </div>
-    <div class="ct-row">
-      <span class="ct-k">permis</span>
-      <span class="ct-v">Permis B — véhiculé</span>
-    </div>
+
   </div>
 </div>
 
@@ -508,7 +528,13 @@
   }), {threshold:0.06});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Curseur personnalisé (desktop uniquement)
+  // Onglets contact
+  function switchTab(id) {
+    document.querySelectorAll('.ct-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.ct-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
   const cur = document.getElementById('cur');
   const ring = document.getElementById('cur-ring');
   if(cur && window.matchMedia('(pointer:fine)').matches){

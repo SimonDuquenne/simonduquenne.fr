@@ -193,6 +193,17 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
     .reveal.in{opacity:1;transform:none}
 
+    /* FORMULAIRE */
+    .fs-form{display:flex;flex-direction:column;gap:1rem;padding-top:0.5rem}
+    .fs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .fs-group{display:flex;flex-direction:column;gap:6px}
+    .fs-label{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);letter-spacing:0.06em}
+    .fs-input{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:0.65rem 0.9rem;font-family:var(--sans);font-size:0.85rem;color:var(--txt);outline:none;transition:border-color 0.2s}
+    .fs-input::placeholder{color:var(--txt-d)}
+    .fs-input:focus{border-color:rgba(124,90,240,0.5)}
+    .fs-textarea{resize:vertical;min-height:100px}
+    .fs-note{font-size:0.75rem;color:var(--txt-d)}
+
     @media(max-width:700px){
       header{padding:0 1.2rem}
       nav{gap:0.8rem}
@@ -203,6 +214,7 @@
       .skills-block{grid-template-columns:1fr}
       .hero-stats{flex-wrap:wrap;gap:1.5rem}
       .scroll-ind{display:none}
+      .fs-row{grid-template-columns:1fr}
       footer{padding:1.2rem 1.5rem}
     }
   </style>
@@ -472,6 +484,7 @@
   <div class="ct-tabs">
     <button class="ct-tab active" onclick="switchTab('ct-coords')">Coordonnées</button>
     <button class="ct-tab" onclick="switchTab('ct-infos')">Disponibilité</button>
+    <button class="ct-tab" onclick="switchTab('ct-form')">Envoyer un message</button>
   </div>
   <div class="contact-block">
     <div class="ct-panel active" id="ct-coords">
@@ -507,6 +520,34 @@
         <span class="ct-k">permis</span>
         <span class="ct-v">Permis B — véhiculé</span>
       </div>
+    </div>
+    <div class="ct-panel" id="ct-form">
+      <form action="https://formspree.io/f/xjgdraop" method="POST" class="fs-form">
+        <div class="fs-row">
+          <div class="fs-group">
+            <label class="fs-label">Nom</label>
+            <input type="text" name="name" placeholder="Votre nom" required class="fs-input"/>
+          </div>
+          <div class="fs-group">
+            <label class="fs-label">Email</label>
+            <input type="email" name="email" placeholder="votre@email.com" required class="fs-input"/>
+          </div>
+        </div>
+        <div class="fs-group">
+          <label class="fs-label">Sujet</label>
+          <input type="text" name="subject" placeholder="Objet de votre message" class="fs-input"/>
+        </div>
+        <div class="fs-group">
+          <label class="fs-label">Message</label>
+          <textarea name="message" placeholder="Votre message..." required class="fs-input fs-textarea"></textarea>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:0.5rem">
+          <span class="fs-note">Ou directement : <a href="mailto:simon.duquenne60@gmail.com" style="color:var(--vio-l)">simon.duquenne60@gmail.com</a></span>
+          <button type="submit" class="btn btn-fill">Envoyer
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

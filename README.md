@@ -12,8 +12,8 @@ Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudi
 - **Projet BTS** — infrastructure haute disponibilité déployée au CNPE de Penly
 - **Formation** — BTS CIEL option A, Bac Pro SN, BJSP, Brevet des collèges
 - **Compétences** — réseaux, systèmes & virtualisation, transmissions, cybersécurité industrielle
-- **CV** — téléchargeable en PDF (à venir)
-- **Contact** — email, téléphone, LinkedIn / disponibilité, mobilité, permis B
+- **CV** — téléchargeable en PDF (`cv-simon-duquenne.pdf`)
+- **Contact** — coordonnées (email, téléphone, LinkedIn), disponibilité, formulaire de contact Formspree
 
 ---
 
@@ -22,6 +22,7 @@ Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudi
 - HTML5 / CSS3 / JavaScript vanilla — aucun framework
 - Hébergement : **GitHub Pages**
 - Domaine : **OVHcloud**
+- Formulaire de contact : **Formspree**
 - Polices : Inter + JetBrains Mono (Google Fonts)
 
 ---
@@ -36,7 +37,8 @@ Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudi
 - Effet highlight sur les expériences au survol
 - Dégradé fond noir → violet très désaturé
 - Indicateur "Disponible" pulsant dans la nav
-- Onglets contact (Coordonnées / Disponibilité)
+- Onglets contact : Coordonnées / Disponibilité / Envoyer un message
+- Formulaire de contact Formspree (envoi direct par email)
 - Animations au scroll (reveal)
 
 ---
@@ -46,7 +48,7 @@ Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudi
 ```
 simonduquenne.fr/
 ├── index.html              # Site complet (HTML/CSS/JS en un seul fichier)
-├── cv-simon-duquenne.pdf   # CV téléchargeable (à ajouter)
+├── cv-simon-duquenne.pdf   # CV téléchargeable
 ├── CNAME                   # Domaine personnalisé GitHub Pages
 └── README.md               # Ce fichier
 ```

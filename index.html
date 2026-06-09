@@ -194,15 +194,17 @@
     .reveal.in{opacity:1;transform:none}
 
     /* FORMULAIRE */
-    .fs-form{display:flex;flex-direction:column;gap:1rem;padding-top:0.5rem}
-    .fs-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .fs-group{display:flex;flex-direction:column;gap:6px}
-    .fs-label{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);letter-spacing:0.06em}
-    .fs-input{background:var(--s1);border:1px solid var(--border);border-radius:4px;padding:0.65rem 0.9rem;font-family:var(--sans);font-size:0.85rem;color:var(--txt);outline:none;transition:border-color 0.2s}
+    .fs-form{display:flex;flex-direction:column;gap:1.2rem;padding-top:0.8rem}
+    .fs-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .fs-group{display:flex;flex-direction:column;gap:7px}
+    .fs-label{font-family:var(--mono);font-size:0.65rem;color:var(--vio-l);letter-spacing:0.08em;text-transform:uppercase}
+    .fs-input{background:#13121f;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:0.75rem 1rem;font-family:var(--sans);font-size:0.88rem;color:#fff;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%}
     .fs-input::placeholder{color:var(--txt-d)}
-    .fs-input:focus{border-color:rgba(124,90,240,0.5)}
-    .fs-textarea{resize:vertical;min-height:100px}
-    .fs-note{font-size:0.75rem;color:var(--txt-d)}
+    .fs-input:focus{border-color:var(--vio);box-shadow:0 0 0 3px rgba(124,90,240,0.15)}
+    .fs-textarea{resize:vertical;min-height:120px}
+    .fs-note{font-size:0.78rem;color:var(--txt-m)}
+    .fs-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:0.5rem;border-top:1px solid var(--border)}
+    @media(max-width:700px){.fs-row{grid-template-columns:1fr}}
 
     @media(max-width:700px){
       header{padding:0 1.2rem}
@@ -541,7 +543,7 @@
           <label class="fs-label">Message</label>
           <textarea name="message" placeholder="Votre message..." required class="fs-input fs-textarea"></textarea>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:0.5rem">
+        <div class="fs-footer">
           <span class="fs-note">Ou directement : <a href="mailto:simon.duquenne60@gmail.com" style="color:var(--vio-l)">simon.duquenne60@gmail.com</a></span>
           <button type="submit" class="btn btn-fill">Envoyer
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>

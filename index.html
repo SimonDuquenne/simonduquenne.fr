@@ -12,167 +12,220 @@
   <meta property="og:title" content="Simon Duquenne · Technicien Réseaux & IT"/>
   <meta property="og:description" content="Portfolio de Simon Duquenne, technicien réseaux & IT, disponible septembre 2026."/>
   <meta property="og:type" content="profile"/>
-  <meta name="theme-color" content="#09090e"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Simon Duquenne","jobTitle":"Technicien Réseaux & IT","url":"https://www.simonduquenne.fr","email":"simon.duquenne60@gmail.com","knowsAbout":["Réseaux informatiques","Administration système","Support IT","Transmissions radio","Environnements industriels"]}</script>
+  <meta name="theme-color" content="#07070d"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Simon Duquenne","jobTitle":"Technicien Réseaux & IT","url":"https://www.simonduquenne.fr","email":"simon.duquenne60@gmail.com","knowsAbout":["Réseaux informatiques","Administration système","Support IT","Environnements industriels"]}</script>
+  <meta name="google-site-verification" content="F9nCmprQM-7s98kcEgQbdqxxjh_8CXjgnSDllVvZFds" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;1,14..32,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#09090e;
-      --s1:#101018;
-      --border:rgba(255,255,255,0.08);
-      --vio:#7c5af0;
-      --vio-l:#b09bff;
-      --vio-dim:rgba(124,90,240,0.1);
-      --txt:#f0eeff;
-      --txt-m:#9d99be;
-      --txt-d:#5a5778;
-      --sans:'Inter',sans-serif;
-      --mono:'JetBrains Mono',monospace;
+      --bg:#07070d;--s1:#0e0e18;--s2:#13131f;
+      --border:rgba(255,255,255,0.07);
+      --vio:#7c5af0;--vio-l:#b09bff;--vio-dim:rgba(124,90,240,0.12);
+      --cyan:#00d4ff;--cyan-dim:rgba(0,212,255,0.08);
+      --txt:#f0eeff;--txt-m:#9d99be;--txt-d:#5a5778;
+      --sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
     }
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body{background:var(--bg);background:linear-gradient(160deg,#07070d 0%,#0a0814 40%,#0d0a1a 70%,#07070d 100%);background-attachment:fixed;color:var(--txt);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-    header{
-      position:fixed;top:0;left:0;right:0;z-index:200;
-      display:flex;justify-content:space-between;align-items:center;
-      padding:0 4rem;height:56px;
-      background:rgba(9,9,14,0.88);backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--border);
-    }
-    .logo{font-family:var(--mono);font-size:0.82rem;font-weight:500;color:var(--txt);text-decoration:none;letter-spacing:0.04em}
-    .logo span{color:var(--vio-l)}
-    nav{display:flex;gap:2.5rem;align-items:center}
-    nav a{font-size:0.78rem;color:var(--txt-m);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s}
-    nav a:hover{color:var(--txt)}
-    .nav-cta{font-size:0.75rem;padding:5px 14px;border-radius:3px;border:1px solid rgba(124,90,240,0.35)!important;color:var(--vio-l)!important}
-    .nav-cta:hover{background:var(--vio-dim)}
+    /* BARRE DE LECTURE */
+    #read-bar{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--vio),var(--cyan));z-index:9999;transition:width 0.1s linear}
 
-    #hero{min-height:100vh;display:flex;align-items:center;padding:56px 4rem 0}
-    .hero-inner{max-width:780px;padding:4rem 0}
-    .hero-pre{
-      font-family:var(--mono);font-size:0.72rem;color:var(--vio-l);
-      letter-spacing:0.12em;text-transform:uppercase;
-      margin-bottom:1.6rem;display:flex;align-items:center;gap:10px;
-    }
-    .hero-pre::before{content:'';width:20px;height:1px;background:var(--vio)}
-    h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;letter-spacing:-0.02em;line-height:1.12;color:var(--txt);margin-bottom:1.4rem}
-    h1 strong{font-weight:500;color:#fff;display:block}
-    h1 em{font-style:italic;color:var(--txt-m);font-weight:300;font-size:0.75em}
-    .hero-desc{font-size:0.93rem;color:var(--txt-m);font-weight:300;max-width:540px;line-height:1.75;margin-bottom:2rem}
-    .hero-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2.2rem}
-    .chip{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.04em;padding:4px 11px;border-radius:3px;background:transparent;border:1px solid var(--border);color:var(--txt-m)}
-    .chip.hi{border-color:rgba(124,90,240,0.5);color:var(--vio-l);background:var(--vio-dim)}
-    .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:7px;padding:0.6rem 1.4rem;border-radius:4px;font-family:var(--sans);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.18s;letter-spacing:0.01em}
-    .btn-fill{background:var(--vio);color:#fff;border:1px solid var(--vio)}
-    .btn-fill:hover{background:#9374f5}
-    .btn-line{background:transparent;color:var(--txt);border:1px solid var(--border)}
-    .btn-line:hover{border-color:rgba(124,90,240,0.4);color:var(--vio-l)}
-
-    .section{max-width:860px;margin:0 auto;padding:5.5rem 4rem;border-top:1px solid var(--border)}
-    .section-head{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:3rem}
-    .section-kw{font-family:var(--mono);font-size:0.65rem;color:var(--vio-l);letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap}
-    .section-line{flex:1;height:1px;background:var(--border)}
-
-    /* EXPÉRIENCES */
-    .exp-list{display:flex;flex-direction:column}
-    .exp{display:grid;grid-template-columns:56px 1fr;gap:0 2rem;padding:2rem 0;border-bottom:1px solid var(--border)}
-    .exp:last-child{border-bottom:none}
-    .exp-n{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);letter-spacing:0.05em;padding-top:3px}
-    .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.6rem}
-    .exp-role{font-size:0.93rem;font-weight:500;color:#fff}
-    .exp-where{font-size:0.78rem;color:var(--vio-l);font-weight:400;margin-top:2px}
-    .exp-period{font-family:var(--mono);font-size:0.65rem;color:var(--txt-d);white-space:nowrap;padding-top:4px}
-    .exp-desc{font-size:0.83rem;color:var(--txt-m);font-weight:300;line-height:1.7;max-width:580px}
-    .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:0.9rem}
-    .tag{font-family:var(--mono);font-size:0.62rem;padding:2px 7px;border-radius:2px;background:var(--vio-dim);color:var(--vio-l);border:1px solid rgba(124,90,240,0.18)}
-
-    /* PROJET */
-    .project-card{
-      background:var(--s1);border:1px solid var(--border);border-radius:6px;
-      padding:2rem;transition:border-color 0.2s;
-    }
-    .project-card:hover{border-color:rgba(124,90,240,0.35)}
-    .project-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}
-    .project-title{font-size:0.95rem;font-weight:500;color:#fff;margin-bottom:4px}
-    .project-context{font-size:0.75rem;color:var(--vio-l);font-family:var(--mono);letter-spacing:0.04em}
-    .project-badge{
-      font-family:var(--mono);font-size:0.6rem;padding:3px 9px;border-radius:2px;
-      border:1px solid rgba(124,90,240,0.35);color:var(--vio-l);white-space:nowrap;
-      align-self:flex-start;
-    }
-    .project-desc{font-size:0.83rem;color:var(--txt-m);font-weight:300;line-height:1.7;max-width:600px}
-    .project-details{
-      margin-top:1.2rem;padding-top:1.2rem;
-      border-top:1px solid var(--border);
-      display:flex;flex-direction:column;gap:0.5rem;
-    }
-    .detail-row{display:flex;gap:1rem;font-size:0.8rem}
-    .detail-k{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);width:100px;flex-shrink:0;letter-spacing:0.05em;padding-top:1px}
-    .detail-v{color:var(--txt-m);font-weight:300}
-
-    /* FORMATION */
-    .edu-list{display:flex;flex-direction:column}
-    .edu{display:grid;grid-template-columns:56px 1fr;gap:0 2rem;padding:1.4rem 0;border-bottom:1px solid var(--border);align-items:center}
-    .edu:last-child{border-bottom:none}
-    .edu-dot{width:7px;height:7px;border-radius:50%;background:var(--border);border:1px solid var(--txt-d);margin:auto}
-    .edu-dot.on{background:var(--vio-dim);border-color:var(--vio)}
-    .edu-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
-    .edu-name{font-size:0.88rem;font-weight:500;color:var(--txt)}
-    .edu-sub{font-size:0.78rem;color:var(--txt-m);font-weight:300;margin-top:2px}
-    .edu-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-    .edu-yr{font-family:var(--mono);font-size:0.65rem;color:var(--txt-d)}
-    .badge{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.04em;padding:2px 8px;border-radius:2px;border:1px solid var(--border);color:var(--txt-d)}
-    .badge.on{border-color:rgba(124,90,240,0.45);color:var(--vio-l);background:var(--vio-dim)}
-
-    /* COMPÉTENCES */
-    .skills-block{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem}
-    .sg-title{font-family:var(--mono);font-size:0.62rem;color:var(--vio);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem}
-    .sg-items{display:flex;flex-direction:column;gap:6px}
-    .sk{font-size:0.82rem;color:var(--txt-m);font-weight:300;display:flex;align-items:center;gap:9px}
-    .sk::before{content:'';width:4px;height:1px;background:var(--vio);flex-shrink:0}
-
-    /* CONTACT */
-    .contact-block{display:flex;flex-direction:column}
-    .ct-row{display:flex;align-items:center;gap:2rem;padding:1rem 0;border-bottom:1px solid var(--border);text-decoration:none}
-    .ct-row:last-child{border-bottom:none}
-    .ct-k{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);width:80px;flex-shrink:0;letter-spacing:0.06em}
-    .ct-v{font-size:0.85rem;color:var(--vio-l);transition:color 0.2s}
-    a.ct-row:hover .ct-v{color:#fff}
-
-    .cv-strip{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem;padding:1.6rem 2rem;background:var(--s1);border:1px solid var(--border);border-radius:5px}
-    .cv-strip-text h3{font-size:0.9rem;font-weight:500;color:var(--txt)}
-    .cv-strip-text p{font-size:0.78rem;color:var(--txt-m);font-weight:300;margin-top:3px}
-
-    footer{border-top:1px solid var(--border);padding:1.4rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);letter-spacing:0.06em}
+    /* CANVAS */
+    #grid-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.35}
 
     /* CURSEUR */
     @media(pointer:fine){
       *{cursor:none!important}
       #cur{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--vio);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .15s}
-      #cur-ring{position:fixed;top:0;left:0;width:32px;height:32px;border:1px solid rgba(176,155,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s}
-      body.hovering #cur{width:14px;height:14px;background:var(--vio-l)}
-      body.hovering #cur-ring{width:44px;height:44px;opacity:.6}
+      #cur-ring{position:fixed;top:0;left:0;width:32px;height:32px;border:1px solid rgba(176,155,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+      body.hovering #cur{width:16px;height:16px;background:var(--cyan)}
+      body.hovering #cur-ring{width:48px;height:48px;border-color:rgba(0,212,255,0.4)}
     }
 
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease}
+    /* NAV */
+    header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 4rem;height:56px;background:rgba(7,7,13,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .logo{font-family:var(--mono);font-size:0.85rem;font-weight:500;color:var(--txt);text-decoration:none;letter-spacing:0.06em}
+    .logo span{color:var(--vio-l)}
+    nav{display:flex;gap:2rem;align-items:center}
+    nav a{font-size:0.78rem;color:var(--txt-m);text-decoration:none;letter-spacing:0.03em;transition:color 0.2s}
+    nav a:hover{color:var(--cyan)}
+    .nav-dispo{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:0.68rem;color:var(--cyan);padding:4px 12px;border-radius:3px;border:1px solid rgba(0,212,255,0.3);background:var(--cyan-dim)}
+    .nav-dispo-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse-dot 2s infinite}
+    @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,0.4)}50%{box-shadow:0 0 0 5px rgba(0,212,255,0)}}
+    .nav-cta{font-size:0.75rem;padding:5px 14px;border-radius:3px;border:1px solid rgba(176,155,255,0.3)!important;color:var(--vio-l)!important}
+    .nav-cta:hover{background:var(--vio-dim)}
+
+    /* HERO */
+    #hero{min-height:100vh;display:flex;align-items:center;padding:56px 4rem 0;position:relative;z-index:1}
+    .hero-inner{max-width:820px;padding:4rem 0}
+    .hero-pre{font-family:var(--mono);font-size:0.7rem;color:var(--cyan);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.8rem;display:flex;align-items:center;gap:12px;opacity:0;animation:fadeUp 0.5s 0.2s ease forwards;min-height:1.2em}
+    .hero-pre::before{content:'';width:24px;height:1px;background:var(--cyan);flex-shrink:0}
+    h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:300;letter-spacing:-0.03em;line-height:1.08;margin-bottom:1.6rem;opacity:0;animation:fadeUp 0.6s 0.4s ease forwards}
+    h1 .name{display:block;font-weight:500;background:linear-gradient(135deg,#fff 0%,var(--vio-l) 60%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    h1 em{display:block;font-style:normal;color:var(--txt-d);font-weight:300;font-size:0.52em;letter-spacing:0.02em;margin-top:0.3em}
+    .hero-desc{font-size:0.93rem;color:var(--txt-m);font-weight:300;max-width:560px;line-height:1.8;margin-bottom:2rem;opacity:0;animation:fadeUp 0.5s 0.6s ease forwards}
+    .hero-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2.4rem;opacity:0;animation:fadeUp 0.5s 0.7s ease forwards}
+    .chip{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.04em;padding:4px 12px;border-radius:3px;background:transparent;border:1px solid var(--border);color:var(--txt-d);transition:all 0.2s}
+    .chip:hover{border-color:rgba(124,90,240,0.4);color:var(--vio-l)}
+    .chip.hi{border-color:rgba(0,212,255,0.4);color:var(--cyan);background:var(--cyan-dim)}
+    .hero-btns{display:flex;gap:10px;flex-wrap:wrap;opacity:0;animation:fadeUp 0.5s 0.85s ease forwards}
+
+    /* STATS HERO */
+    .hero-stats{display:flex;gap:2.5rem;margin-top:2.8rem;padding-top:2rem;border-top:1px solid var(--border);opacity:0;animation:fadeUp 0.5s 1s ease forwards}
+    .stat-item{display:flex;flex-direction:column;gap:3px}
+    .stat-num{font-family:var(--mono);font-size:1.4rem;font-weight:500;background:linear-gradient(135deg,var(--vio-l),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .stat-label{font-size:0.72rem;color:var(--txt-d);letter-spacing:0.04em}
+
+    .btn{display:inline-flex;align-items:center;gap:7px;padding:0.65rem 1.5rem;border-radius:4px;font-family:var(--sans);font-size:0.82rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.01em}
+    .btn-fill{background:var(--vio);color:#fff;border:1px solid var(--vio)}
+    .btn-fill:hover{background:#9374f5;box-shadow:0 0 20px rgba(124,90,240,0.4)}
+    .btn-line{background:transparent;color:var(--txt);border:1px solid var(--border)}
+    .btn-line:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 16px rgba(0,212,255,0.15)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+    .scroll-ind{position:absolute;bottom:2.5rem;left:4rem;font-family:var(--mono);font-size:0.6rem;color:var(--txt-d);letter-spacing:0.1em;display:flex;align-items:center;gap:10px;opacity:0;animation:fadeUp 0.5s 1.2s ease forwards}
+    .scroll-ind::after{content:'';width:30px;height:1px;background:var(--txt-d)}
+
+    /* SECTIONS */
+    .section{max-width:900px;margin:0 auto;padding:6rem 4rem;border-top:1px solid var(--border);position:relative;z-index:1}
+    .section-head{display:flex;align-items:center;gap:1.2rem;margin-bottom:3.5rem}
+    .section-num{font-family:var(--mono);font-size:0.6rem;color:var(--txt-d);letter-spacing:0.08em}
+    .section-kw{font-family:var(--mono);font-size:0.65rem;color:var(--vio-l);letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap}
+    .section-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+
+    /* EXPÉRIENCES — effet highlight */
+    .exp-list{display:flex;flex-direction:column}
+    .exp-list:hover .exp{opacity:0.4}
+    .exp-list:hover .exp:hover{opacity:1}
+    .exp{display:grid;grid-template-columns:48px 1fr;gap:0 2rem;padding:2.2rem 0;border-bottom:1px solid var(--border);transition:opacity 0.25s,transform 0.2s}
+    .exp:last-child{border-bottom:none}
+    .exp:hover{transform:translateX(5px)}
+    .exp-n{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.05em;padding-top:4px;background:linear-gradient(135deg,var(--vio-l),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:500}
+    .exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.6rem}
+    .exp-role{font-size:0.95rem;font-weight:500;color:#fff}
+    .exp-where{font-size:0.78rem;color:var(--cyan);font-weight:400;margin-top:3px;opacity:0.8}
+    .exp-period{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);white-space:nowrap;padding-top:5px}
+    .exp-desc{font-size:0.83rem;color:var(--txt-m);font-weight:300;line-height:1.75;max-width:580px}
+    .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:1rem}
+    .tag{font-family:var(--mono);font-size:0.6rem;padding:3px 8px;border-radius:2px;background:var(--vio-dim);color:var(--vio-l);border:1px solid rgba(124,90,240,0.2);transition:all 0.2s}
+    .tag:hover{background:var(--cyan-dim);color:var(--cyan);border-color:rgba(0,212,255,0.3)}
+
+    /* PROJET */
+    .project-card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:2.2rem;transition:all 0.25s;position:relative;overflow:hidden}
+    .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--vio),var(--cyan),transparent);opacity:0;transition:opacity 0.3s}
+    .project-card:hover{border-color:rgba(124,90,240,0.3);box-shadow:0 8px 32px rgba(124,90,240,0.1)}
+    .project-card:hover::before{opacity:1}
+    .project-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.2rem}
+    .project-title{font-size:1rem;font-weight:500;color:#fff;margin-bottom:5px}
+    .project-context{font-size:0.72rem;color:var(--cyan);font-family:var(--mono);letter-spacing:0.05em;opacity:0.8}
+    .project-badge{font-family:var(--mono);font-size:0.58rem;padding:3px 10px;border-radius:2px;border:1px solid rgba(0,212,255,0.3);color:var(--cyan);white-space:nowrap;background:var(--cyan-dim);align-self:flex-start}
+    .project-desc{font-size:0.84rem;color:var(--txt-m);font-weight:300;line-height:1.75;max-width:620px}
+    .project-details{margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:0.6rem}
+    .detail-row{display:flex;gap:1rem}
+    .detail-k{font-family:var(--mono);font-size:0.6rem;color:var(--txt-d);width:100px;flex-shrink:0;letter-spacing:0.05em;padding-top:1px}
+    .detail-v{font-size:0.83rem;color:var(--txt-m);font-weight:300}
+
+    /* STACK */
+    .stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+    .stack-item{
+      background:var(--s1);border:1px solid var(--border);border-radius:6px;
+      padding:1rem;display:flex;flex-direction:column;align-items:center;gap:8px;
+      transition:all 0.2s;text-align:center;
+    }
+    .stack-item:hover{border-color:rgba(124,90,240,0.4);transform:translateY(-3px);box-shadow:0 6px 20px rgba(124,90,240,0.1)}
+    .stack-icon{font-size:1.6rem;line-height:1}
+    .stack-name{font-family:var(--mono);font-size:0.62rem;color:var(--txt-m);letter-spacing:0.04em}
+    .stack-cat{font-size:0.58rem;color:var(--txt-d)}
+
+    /* FORMATION */
+    .edu-list{display:flex;flex-direction:column}
+    .edu{display:grid;grid-template-columns:48px 1fr;gap:0 2rem;padding:1.6rem 0;border-bottom:1px solid var(--border);align-items:center;transition:transform 0.2s}
+    .edu:last-child{border-bottom:none}
+    .edu:hover{transform:translateX(4px)}
+    .edu-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:1px solid var(--txt-d);margin:auto;transition:all 0.3s}
+    .edu-dot.on{background:var(--vio);border-color:var(--vio-l);box-shadow:0 0 8px rgba(124,90,240,0.5)}
+    .edu-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+    .edu-name{font-size:0.9rem;font-weight:500;color:var(--txt)}
+    .edu-sub{font-size:0.78rem;color:var(--txt-m);font-weight:300;margin-top:3px}
+    .edu-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+    .edu-yr{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d)}
+    .badge{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.04em;padding:2px 9px;border-radius:2px;border:1px solid var(--border);color:var(--txt-d)}
+    .badge.on{border-color:rgba(124,90,240,0.5);color:var(--vio-l);background:var(--vio-dim)}
+
+    /* COMPÉTENCES */
+    .skills-block{display:grid;grid-template-columns:1fr 1fr;gap:3rem 5rem}
+    .sg-title{font-family:var(--mono);font-size:0.6rem;color:var(--cyan);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:8px}
+    .sg-title::before{content:'';width:12px;height:1px;background:var(--cyan);flex-shrink:0}
+    .sg-items{display:flex;flex-direction:column;gap:8px}
+    .sk{font-size:0.83rem;color:var(--txt-m);font-weight:300;display:flex;align-items:center;gap:8px;transition:color 0.2s}
+    .sk:hover{color:var(--txt)}
+    .sk-label{display:flex;align-items:center;gap:8px}
+    .sk-label::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--vio);flex-shrink:0;transition:background 0.2s}
+    .sk:hover .sk-label::before{background:var(--cyan)}
+
+    /* CONTACT */
+    .contact-block{display:flex;flex-direction:column}
+    .ct-tabs{display:flex;gap:6px;margin-bottom:1.5rem}
+    .ct-tab{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;padding:5px 14px;border-radius:3px;border:1px solid var(--border);color:var(--txt-d);background:transparent;cursor:pointer;transition:all 0.2s}
+    .ct-tab.active{border-color:rgba(0,212,255,0.4);color:var(--cyan);background:var(--cyan-dim)}
+    .ct-panel{display:none}
+    .ct-panel.active{display:flex;flex-direction:column}
+    .ct-row{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:transform 0.2s}
+    .ct-row:last-child{border-bottom:none}
+    .ct-row:hover{transform:translateX(4px)}
+    .ct-icon{color:var(--vio-l);flex-shrink:0;display:flex;align-items:center;transition:color 0.2s}
+    a.ct-row:hover .ct-icon{color:var(--cyan)}
+    .ct-k{font-family:var(--mono);font-size:0.62rem;color:var(--txt-d);width:80px;flex-shrink:0;letter-spacing:0.06em}
+    .ct-v{font-size:0.85rem;color:var(--vio-l);transition:color 0.2s}
+    a.ct-row:hover .ct-v{color:#fff}
+
+    /* CV */
+    .cv-strip{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem;padding:1.8rem 2.2rem;background:var(--s1);border:1px solid var(--border);border-radius:8px;position:relative;overflow:hidden}
+    .cv-strip::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--vio-dim),transparent)}
+    .cv-strip-text h3{font-size:0.95rem;font-weight:500;color:var(--txt)}
+    .cv-strip-text p{font-size:0.78rem;color:var(--txt-m);font-weight:300;margin-top:4px}
+
+    footer{border-top:1px solid var(--border);padding:1.6rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:var(--mono);font-size:0.6rem;color:var(--txt-d);letter-spacing:0.06em;position:relative;z-index:1}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
     .reveal.in{opacity:1;transform:none}
-      header{padding:0 1.5rem}
-      nav{gap:1.2rem}
-      .nav-cta{display:none}
+
+    /* FORMULAIRE */
+    .fs-form{display:flex;flex-direction:column;gap:1.2rem;padding-top:0.8rem}
+    .fs-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+    .fs-group{display:flex;flex-direction:column;gap:7px}
+    .fs-label{font-family:var(--mono);font-size:0.65rem;color:var(--vio-l);letter-spacing:0.08em;text-transform:uppercase}
+    .fs-input{background:#13121f;border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:0.75rem 1rem;font-family:var(--sans);font-size:0.88rem;color:#fff;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%}
+    .fs-input::placeholder{color:var(--txt-d)}
+    .fs-input:focus{border-color:var(--vio);box-shadow:0 0 0 3px rgba(124,90,240,0.15)}
+    .fs-textarea{resize:vertical;min-height:120px}
+    .fs-note{font-size:0.78rem;color:var(--txt-m)}
+    .fs-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:0.5rem;border-top:1px solid var(--border)}
+    @media(max-width:700px){.fs-row{grid-template-columns:1fr}}
+
+    @media(max-width:700px){
+      header{padding:0 1.2rem}
+      nav{gap:0.8rem}
+      .nav-dispo span:last-child,.nav-cta{display:none}
       #hero,.section{padding-left:1.5rem;padding-right:1.5rem}
       .exp,.edu{grid-template-columns:1fr;gap:0.5rem}
       .exp-n,.edu-dot{display:none}
       .skills-block{grid-template-columns:1fr}
-      footer{padding:1.2rem 1.5rem;flex-direction:column;align-items:flex-start}
+      .hero-stats{flex-wrap:wrap;gap:1.5rem}
+      .scroll-ind{display:none}
+      .fs-row{grid-template-columns:1fr}
+      footer{padding:1.2rem 1.5rem}
     }
   </style>
 </head>
 <body>
 
+<div id="read-bar"></div>
+<canvas id="grid-canvas"></canvas>
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
@@ -184,6 +237,10 @@
     <a href="#formation">Formation</a>
     <a href="#competences">Compétences</a>
     <a href="#contact">Contact</a>
+    <div class="nav-dispo">
+      <div class="nav-dispo-dot"></div>
+      <span>Disponible sept. 2026</span>
+    </div>
     <a href="#cv" class="nav-cta">CV →</a>
   </nav>
 </header>
@@ -192,121 +249,104 @@
   <div class="hero-inner">
     <div class="hero-pre">Technicien Réseaux & IT</div>
     <h1>
-      <strong>Simon Duquenne</strong>
-      <em>Réseaux · Systèmes · Environnements exigeants</em>
+      <span class="name">Simon Duquenne</span>
+      <em>Réseaux · Systèmes · Environnements critiques</em>
     </h1>
     <p class="hero-desc">
-      Étudiant en BTS CIEL au lycée Sully de Nogent-le-Rotrou en alternance au CNPE de Penly (EDF), formé sur des infrastructures virtualisées et des réseaux industriels en milieu nucléaire.
+      Titulaire d'un BTS CIEL obtenu au lycée Sully de Nogent-le-Rotrou en alternance au CNPE de Penly (EDF), formé sur des infrastructures virtualisées et des réseaux industriels en milieu nucléaire.
       Rigoureux, autonome, habitué à travailler dans des contextes où la disponibilité et la sécurité ne se négocient pas.
     </p>
     <div class="hero-chips">
-      <span class="chip">BTS CIEL option A · CNPE Penly</span>
+      <span class="chip">BTS CIEL option A — Obtenu</span>
       <span class="chip">SPV · SDIS 28</span>
       <span class="chip hi">Disponible sept. 2026</span>
     </div>
     <div class="hero-btns">
-      <span class="btn btn-fill" style="opacity:0.35;cursor:not-allowed;pointer-events:none;">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        CV bientôt disponible
-      </span>
+      <a href="cv-simon-duquenne.pdf" download class="btn btn-fill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger mon CV</a>
       <a href="#contact" class="btn btn-line">Me contacter</a>
     </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num" data-target="4">0</span>
+        <span class="stat-label">Expériences</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="2">0</span>
+        <span class="stat-label">Ans en milieu industriel</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1">0</span>
+        <span class="stat-label">Projet HA déployé</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Diplômes / certifications</span>
+      </div>
+    </div>
   </div>
+  <div class="scroll-ind">scroll</div>
 </section>
 
 <!-- EXPÉRIENCES -->
 <div class="section reveal" id="experience">
   <div class="section-head">
-    <span class="section-kw">// parcours</span>
+    <span class="section-num">01</span>
+    <span class="section-kw">Parcours</span>
     <span class="section-line"></span>
   </div>
   <div class="exp-list">
-
     <div class="exp">
       <div class="exp-n">01</div>
-      <div class="exp-content">
+      <div>
         <div class="exp-header">
-          <div>
-            <div class="exp-role">BTS CIEL — Formation en alternance</div>
-            <div class="exp-where">EDF · CNPE de Penly</div>
-          </div>
+          <div><div class="exp-role">BTS CIEL — Alternance EDF</div><div class="exp-where">EDF · CNPE de Penly</div></div>
           <span class="exp-period">2024 – 2026</span>
         </div>
-        <div class="exp-desc">Formation en milieu industriel nucléaire au sein du Centre Nucléaire de Production d'Électricité de Penly. Travail sur des infrastructures réseau réelles dans un environnement soumis à des exigences strictes de sécurité et de disponibilité.</div>
-        <div class="tags">
-          <span class="tag">Réseau industriel</span>
-          <span class="tag">Infrastructure</span>
-          <span class="tag">Environnement critique</span>
-          <span class="tag">EDF</span>
-        </div>
+        <div class="exp-desc">Formation en milieu industriel nucléaire au CNPE de Penly. Déploiement d'infrastructures réseau et systèmes réels soumis à des exigences strictes de sécurité et de disponibilité. BTS obtenu.</div>
+        <div class="tags"><span class="tag">Réseau industriel</span><span class="tag">Infrastructure</span><span class="tag">Environnement critique</span><span class="tag">EDF</span></div>
       </div>
     </div>
-
     <div class="exp">
       <div class="exp-n">02</div>
-      <div class="exp-content">
+      <div>
         <div class="exp-header">
-          <div>
-            <div class="exp-role">Sapeur-Pompier Volontaire — Équipier secouriste</div>
-            <div class="exp-where">SDIS 28 · CIS La Loupe</div>
-          </div>
+          <div><div class="exp-role">Sapeur-Pompier Volontaire — Équipier secouriste</div><div class="exp-where">SDIS 28 · CIS La Loupe</div></div>
           <span class="exp-period">Juil. 2024 → présent</span>
         </div>
         <div class="exp-desc">Engagement volontaire en parallèle de la formation. Interventions en équipe dans des situations d'urgence — développement du sang-froid et de la rigueur opérationnelle.</div>
-        <div class="tags">
-          <span class="tag">Travail d'équipe</span>
-          <span class="tag">Rigueur</span>
-        </div>
+        <div class="tags"><span class="tag">Travail d'équipe</span><span class="tag">Rigueur</span></div>
       </div>
     </div>
-
     <div class="exp">
       <div class="exp-n">03</div>
-      <div class="exp-content">
+      <div>
         <div class="exp-header">
-          <div>
-            <div class="exp-role">Stage — Transmissions & Support IT</div>
-            <div class="exp-where">SDIS 28 · Service Transmissions</div>
-          </div>
+          <div><div class="exp-role">Stage — Transmissions & Support IT</div><div class="exp-where">SDIS 28 · Service Transmissions</div></div>
           <span class="exp-period">Juin – Juil. 2023</span>
         </div>
         <div class="exp-desc">Maintenance et réparation des équipements électroniques et bips d'alerte. Support informatique, câblage réseau et administration des systèmes dans un contexte opérationnel à fortes contraintes.</div>
-        <div class="tags">
-          <span class="tag">Électronique</span>
-          <span class="tag">Support IT</span>
-          <span class="tag">Câblage</span>
-          <span class="tag">Administration</span>
-        </div>
+        <div class="tags"><span class="tag">Électronique</span><span class="tag">Support IT</span><span class="tag">Câblage</span><span class="tag">Administration</span></div>
       </div>
     </div>
-
     <div class="exp">
       <div class="exp-n">04</div>
-      <div class="exp-content">
+      <div>
         <div class="exp-header">
-          <div>
-            <div class="exp-role">Stage — Service Informatique</div>
-            <div class="exp-where">Conseil Départemental 28 · DSI</div>
-          </div>
+          <div><div class="exp-role">Stage — Service Informatique</div><div class="exp-where">Conseil Départemental 28 · DSI</div></div>
           <span class="exp-period">2022 – 2024 (Bac Pro)</span>
         </div>
-        <div class="exp-desc">Stages répartis sur le cursus Bac Pro SN. Support utilisateurs N1/N2, câblage réseau, déploiement et administration des postes et équipements réseau.</div>
-        <div class="tags">
-          <span class="tag">Support N1/N2</span>
-          <span class="tag">Réseau</span>
-          <span class="tag">Câblage</span>
-          <span class="tag">Administration</span>
-        </div>
+        <div class="exp-desc">Stages au sein de la DSI du Conseil Départemental. Support utilisateurs N1/N2, câblage réseau, déploiement et administration des postes et équipements réseau.</div>
+        <div class="tags"><span class="tag">Support N1/N2</span><span class="tag">Réseau</span><span class="tag">Câblage</span><span class="tag">Administration</span></div>
       </div>
     </div>
-
   </div>
 </div>
 
 <!-- PROJETS -->
 <div class="section reveal" id="projets">
   <div class="section-head">
-    <span class="section-kw">// projets</span>
+    <span class="section-num">02</span>
+    <span class="section-kw">Projets</span>
     <span class="section-line"></span>
   </div>
   <div class="project-card">
@@ -317,31 +357,14 @@
       </div>
       <span class="project-badge">Projet d'alternance</span>
     </div>
-    <div class="project-desc">
-      Conception et déploiement d'une infrastructure virtualisée hautement disponible pour des applications métier critiques en site nucléaire. Le projet couvre l'architecture serveur, la segmentation réseau, la supervision et la sécurité — réalisé en autonomie dans un environnement industriel soumis à des exigences strictes de disponibilité et de traçabilité.
-    </div>
+    <div class="project-desc">Conception et déploiement d'une infrastructure virtualisée hautement disponible pour des applications métier critiques en site nucléaire. Le projet couvre l'architecture serveur, la segmentation réseau, la supervision et la sécurité — réalisé en autonomie dans un environnement industriel soumis à des exigences strictes de disponibilité et de traçabilité.</div>
     <div class="project-details">
-      <div class="detail-row">
-        <span class="detail-k">Contexte</span>
-        <span class="detail-v">Site nucléaire en production (EDF / CNPE Penly) — service SI industriel</span>
-      </div>
-      <div class="detail-row">
-        <span class="detail-k">Périmètre</span>
-        <span class="detail-v">Virtualisation, haute disponibilité, segmentation réseau, sécurité en profondeur, supervision</span>
-      </div>
-      <div class="detail-row">
-        <span class="detail-k">Livrable</span>
-        <span class="detail-v">Infrastructure déployée + documentation d'exploitation complète</span>
-      </div>
+      <div class="detail-row"><span class="detail-k">Contexte</span><span class="detail-v">Site nucléaire en production (EDF / CNPE Penly) — service SI industriel</span></div>
+      <div class="detail-row"><span class="detail-k">Périmètre</span><span class="detail-v">Virtualisation, haute disponibilité, segmentation réseau, sécurité en profondeur, supervision</span></div>
+      <div class="detail-row"><span class="detail-k">Livrable</span><span class="detail-v">Infrastructure déployée + documentation d'exploitation complète</span></div>
     </div>
     <div class="tags" style="margin-top:1.2rem">
-      <span class="tag">Virtualisation</span>
-      <span class="tag">Haute disponibilité</span>
-      <span class="tag">VLAN</span>
-      <span class="tag">Cybersécurité</span>
-      <span class="tag">Supervision</span>
-      <span class="tag">Milieu industriel</span>
-      <span class="tag">Documentation</span>
+      <span class="tag">Virtualisation</span><span class="tag">Haute disponibilité</span><span class="tag">VLAN</span><span class="tag">Cybersécurité</span><span class="tag">Supervision</span><span class="tag">Milieu industriel</span><span class="tag">Documentation</span>
     </div>
   </div>
 </div>
@@ -349,22 +372,17 @@
 <!-- FORMATION -->
 <div class="section reveal" id="formation">
   <div class="section-head">
-    <span class="section-kw">// formation</span>
+    <span class="section-num">03</span>
+    <span class="section-kw">Formation</span>
     <span class="section-line"></span>
   </div>
   <div class="edu-list">
     <div class="edu">
-      <div class="edu-dot on"></div>
+      <div class="edu-dot"></div>
       <div style="width:100%">
         <div class="edu-row">
-          <div>
-            <div class="edu-name">BTS CIEL — Option A (Systèmes numériques)</div>
-            <div class="edu-sub">Lycée des Métiers Sully · Nogent-le-Rotrou — Alternance EDF CNPE Penly</div>
-          </div>
-          <div class="edu-right">
-            <span class="edu-yr">2024 – 2026</span>
-            <span class="badge on">En cours</span>
-          </div>
+          <div><div class="edu-name">BTS CIEL — Option A (Systèmes numériques)</div><div class="edu-sub">Lycée des Métiers Sully · Nogent-le-Rotrou — Alternance EDF CNPE Penly</div></div>
+          <div class="edu-right"><span class="edu-yr">2024 – 2026</span><span class="badge">Obtenu</span></div>
         </div>
       </div>
     </div>
@@ -372,14 +390,8 @@
       <div class="edu-dot"></div>
       <div style="width:100%">
         <div class="edu-row">
-          <div>
-            <div class="edu-name">Bac Pro Systèmes Numériques (SN)</div>
-            <div class="edu-sub">Lycée des Métiers Sully · Nogent-le-Rotrou — Réseaux Informatiques & Systèmes Communicants</div>
-          </div>
-          <div class="edu-right">
-            <span class="edu-yr">2022 – 2024</span>
-            <span class="badge">Obtenu</span>
-          </div>
+          <div><div class="edu-name">Bac Pro Systèmes Numériques (SN)</div><div class="edu-sub">Lycée des Métiers Sully · Nogent-le-Rotrou — Réseaux Informatiques & Systèmes Communicants</div></div>
+          <div class="edu-right"><span class="edu-yr">2022 – 2024</span><span class="badge">Obtenu</span></div>
         </div>
       </div>
     </div>
@@ -387,13 +399,17 @@
       <div class="edu-dot"></div>
       <div style="width:100%">
         <div class="edu-row">
-          <div>
-            <div class="edu-name">Brevet de Jeune Sapeur-Pompier</div>
-            <div class="edu-sub">SDIS 28</div>
-          </div>
-          <div class="edu-right">
-            <span class="badge">Certifié</span>
-          </div>
+          <div><div class="edu-name">Brevet de Jeune Sapeur-Pompier</div><div class="edu-sub">SDIS 28</div></div>
+          <div class="edu-right"><span class="badge">Certifié</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-dot"></div>
+      <div style="width:100%">
+        <div class="edu-row">
+          <div><div class="edu-name">Brevet des Collèges (DNB)</div><div class="edu-sub">Collège Jean Monnet · La Loupe</div></div>
+          <div class="edu-right"><span class="badge">Obtenu</span></div>
         </div>
       </div>
     </div>
@@ -403,46 +419,43 @@
 <!-- COMPÉTENCES -->
 <div class="section reveal" id="competences">
   <div class="section-head">
-    <span class="section-kw">// compétences</span>
+    <span class="section-num">04</span>
+    <span class="section-kw">Compétences</span>
     <span class="section-line"></span>
   </div>
   <div class="skills-block">
     <div class="sg">
       <div class="sg-title">Réseaux</div>
       <div class="sg-items">
-        <div class="sk">TCP/IP, subnetting</div>
-        <div class="sk">VLAN, switching, routage</div>
-        <div class="sk">VPN, firewall</div>
-        <div class="sk">Câblage (RJ45, baie de brassage)</div>
-        <div class="sk">Wi-Fi, LAN/WAN</div>
+        <div class="sk"><span class="sk-label">TCP/IP, subnetting</span></div>
+        <div class="sk"><span class="sk-label">VLAN, switching, routage</span></div>
+        <div class="sk"><span class="sk-label">VPN, firewall</span></div>
+        <div class="sk"><span class="sk-label">Câblage (RJ45, baie)</span></div>
+        <div class="sk"><span class="sk-label">Wi-Fi, LAN/WAN</span></div>
       </div>
     </div>
     <div class="sg">
       <div class="sg-title">Systèmes & Virtualisation</div>
       <div class="sg-items">
-        <div class="sk">Proxmox VE, clustering</div>
-        <div class="sk">Windows Server, Active Directory</div>
-        <div class="sk">Linux (bases)</div>
-        <div class="sk">Support N1/N2</div>
-        <div class="sk">Déploiement & administration postes</div>
+        <div class="sk"><span class="sk-label">Proxmox VE, clustering</span></div>
+        <div class="sk"><span class="sk-label">Windows Server, AD</span></div>
+        <div class="sk"><span class="sk-label">Linux (bases)</span></div>
+        <div class="sk"><span class="sk-label">Support N1/N2</span></div>
       </div>
     </div>
     <div class="sg">
       <div class="sg-title">Transmissions</div>
       <div class="sg-items">
-        <div class="sk">Électronique, diagnostic</div>
-        <div class="sk">Maintenance matériel</div>
-        <div class="sk">Bips d'alerte pompiers</div>
+        <div class="sk"><span class="sk-label">Électronique, diagnostic</span></div>
+        <div class="sk"><span class="sk-label">Maintenance matériel</span></div>
       </div>
     </div>
     <div class="sg">
       <div class="sg-title">Transversal</div>
       <div class="sg-items">
-        <div class="sk">Cybersécurité industrielle</div>
-        <div class="sk">Supervision & monitoring</div>
-        <div class="sk">Réactivité & sang-froid</div>
-        <div class="sk">Travail en équipe</div>
-        <div class="sk">Documentation technique</div>
+        <div class="sk"><span class="sk-label">Cybersécurité industrielle</span></div>
+        <div class="sk"><span class="sk-label">Supervision & monitoring</span></div>
+        <div class="sk"><span class="sk-label">Documentation technique</span></div>
       </div>
     </div>
   </div>
@@ -451,47 +464,93 @@
 <!-- CV -->
 <div class="section reveal" id="cv">
   <div class="section-head">
-    <span class="section-kw">// cv</span>
+    <span class="section-num">05</span>
+    <span class="section-kw">CV</span>
     <span class="section-line"></span>
   </div>
   <div class="cv-strip">
     <div class="cv-strip-text">
       <h3>Curriculum Vitæ</h3>
-      <p>Bientôt disponible.</p>
+      <p>Détail complet du parcours, formations et références.</p>
     </div>
-    <span class="btn btn-fill" style="opacity:0.35;cursor:not-allowed;pointer-events:none;">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Bientôt disponible
-    </span>
+    <a href="cv-simon-duquenne.pdf" download class="btn btn-fill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Télécharger (PDF)</a>
   </div>
 </div>
 
 <!-- CONTACT -->
 <div class="section reveal" id="contact">
   <div class="section-head">
-    <span class="section-kw">// contact</span>
+    <span class="section-num">06</span>
+    <span class="section-kw">Contact</span>
     <span class="section-line"></span>
   </div>
+  <div class="ct-tabs">
+    <button class="ct-tab active" onclick="switchTab('ct-coords')">Coordonnées</button>
+    <button class="ct-tab" onclick="switchTab('ct-infos')">Disponibilité</button>
+    <button class="ct-tab" onclick="switchTab('ct-form')">Envoyer un message</button>
+  </div>
   <div class="contact-block">
-    <a href="mailto:simon.duquenne60@gmail.com" class="ct-row">
-      <span class="ct-k">email</span>
-      <span class="ct-v">simon.duquenne60@gmail.com</span>
-    </a>
-    <a href="https://www.linkedin.com/in/simon-duquenne60/" target="_blank" class="ct-row">
-      <span class="ct-k">linkedin</span>
-      <span class="ct-v">linkedin.com/in/simon-duquenne60</span>
-    </a>
-    <div class="ct-row">
-      <span class="ct-k">dispo</span>
-      <span class="ct-v">Septembre 2026</span>
+    <div class="ct-panel active" id="ct-coords">
+      <a href="mailto:simon.duquenne60@gmail.com" class="ct-row">
+        <span class="ct-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></span>
+        <span class="ct-k">email</span>
+        <span class="ct-v">simon.duquenne60@gmail.com</span>
+      </a>
+      <a href="tel:+33767170762" class="ct-row">
+        <span class="ct-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.08 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></span>
+        <span class="ct-k">téléphone</span>
+        <span class="ct-v">07 67 17 07 62</span>
+      </a>
+      <a href="https://www.linkedin.com/in/simon-duquenne60/" target="_blank" class="ct-row">
+        <span class="ct-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+        <span class="ct-k">linkedin</span>
+        <span class="ct-v">linkedin.com/in/simon-duquenne60</span>
+      </a>
     </div>
-    <div class="ct-row">
-      <span class="ct-k">mobilité</span>
-      <span class="ct-v">Seine-Maritime & Eure-et-Loir — ouvert aux opportunités</span>
+    <div class="ct-panel" id="ct-infos">
+      <div class="ct-row">
+        <span class="ct-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <span class="ct-k">dispo</span>
+        <span class="ct-v">Septembre 2026</span>
+      </div>
+      <div class="ct-row">
+        <span class="ct-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></span>
+        <span class="ct-k">mobilité</span>
+        <span class="ct-v">Seine-Maritime & Eure-et-Loir — ouvert aux opportunités</span>
+      </div>
+      <div class="ct-row">
+        <span class="ct-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <span class="ct-k">permis</span>
+        <span class="ct-v">Permis B — véhiculé</span>
+      </div>
     </div>
-    <div class="ct-row">
-      <span class="ct-k">permis</span>
-      <span class="ct-v">Permis B — véhiculé</span>
+    <div class="ct-panel" id="ct-form">
+      <form action="https://formspree.io/f/xjgdraop" method="POST" class="fs-form">
+        <div class="fs-row">
+          <div class="fs-group">
+            <label class="fs-label">Nom</label>
+            <input type="text" name="name" placeholder="Votre nom" required class="fs-input"/>
+          </div>
+          <div class="fs-group">
+            <label class="fs-label">Email</label>
+            <input type="email" name="email" placeholder="votre@email.com" required class="fs-input"/>
+          </div>
+        </div>
+        <div class="fs-group">
+          <label class="fs-label">Sujet</label>
+          <input type="text" name="subject" placeholder="Objet de votre message" class="fs-input"/>
+        </div>
+        <div class="fs-group">
+          <label class="fs-label">Message</label>
+          <textarea name="message" placeholder="Votre message..." required class="fs-input fs-textarea"></textarea>
+        </div>
+        <div class="fs-footer">
+          <span class="fs-note">Ou directement : <a href="mailto:simon.duquenne60@gmail.com" style="color:var(--vio-l)">simon.duquenne60@gmail.com</a></span>
+          <button type="submit" class="btn btn-fill">Envoyer
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -502,30 +561,82 @@
 </footer>
 
 <script>
-  // Reveal au scroll
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('in');
-  }), {threshold:0.06});
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// BARRE DE LECTURE
+const bar = document.getElementById('read-bar');
+document.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  bar.style.width = pct + '%';
+});
 
-  // Curseur personnalisé (desktop uniquement)
-  const cur = document.getElementById('cur');
-  const ring = document.getElementById('cur-ring');
-  if(cur && window.matchMedia('(pointer:fine)').matches){
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
-    (function loop(){
-      cur.style.left=mx+'px'; cur.style.top=my+'px';
-      rx+=(mx-rx)*0.1; ry+=(my-ry)*0.1;
-      ring.style.left=rx+'px'; ring.style.top=ry+'px';
-      requestAnimationFrame(loop);
-    })();
-    const hoverables = 'a, button, .btn, .project-card, .exp, .edu, .ct-row';
-    document.querySelectorAll(hoverables).forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-    });
+// GRILLE ANIMÉE
+const canvas = document.getElementById('grid-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, mouse = {x:-999,y:-999};
+const SPACING = 40;
+function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+document.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; });
+function drawGrid(){
+  ctx.clearRect(0,0,W,H);
+  const cols=Math.ceil(W/SPACING)+1, rows=Math.ceil(H/SPACING)+1;
+  for(let i=0;i<cols;i++) for(let j=0;j<rows;j++){
+    const x=i*SPACING, y=j*SPACING;
+    const dist=Math.sqrt((x-mouse.x)**2+(y-mouse.y)**2);
+    const inf=Math.max(0,1-dist/160);
+    const alpha=0.1+inf*0.5;
+    const r=inf>0.05?`rgba(${Math.round(124+inf*132)},${Math.round(90+inf*122)},240,${alpha})`:`rgba(255,255,255,${alpha*0.4})`;
+    ctx.beginPath(); ctx.arc(x,y,(0.5+inf*1.5),0,Math.PI*2);
+    ctx.fillStyle=r; ctx.fill();
   }
+  requestAnimationFrame(drawGrid);
+}
+drawGrid();
+
+// CURSEUR
+const cur=document.getElementById('cur'), ring=document.getElementById('cur-ring');
+if(cur && window.matchMedia('(pointer:fine)').matches){
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function loop(){ cur.style.left=mx+'px';cur.style.top=my+'px';rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+  document.querySelectorAll('a,button,.btn,.project-card,.exp,.edu,.stack-item').forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));
+  });
+}
+
+// ONGLETS CONTACT
+function switchTab(id){
+  document.querySelectorAll('.ct-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ct-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// REVEAL + STATS + BARRES
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if(!e.isIntersecting) return;
+  e.target.classList.add('in');
+  // Compteurs stats
+  e.target.querySelectorAll('.stat-num[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    let n=0; const step=Math.max(1,Math.floor(target/30));
+    const t=setInterval(()=>{ n=Math.min(n+step,target); el.textContent=n; if(n>=target) clearInterval(t); },40);
+  });
+}),{threshold:0.08});
+document.querySelectorAll('.reveal, #hero').forEach(el=>obs.observe(el));
+
+// TYPEWRITER
+const roles=['Technicien Réseaux & IT','Alternant EDF · CNPE Penly','BTS CIEL option A'];
+let ri=0,ci=0,del=false;
+const tw=document.querySelector('.hero-pre');
+if(tw){ setInterval(()=>{
+  const word=roles[ri];
+  if(!del){ if(ci<word.length){ci++;}else{setTimeout(()=>del=true,1800);return;} }
+  else{ if(ci>0){ci--;}else{del=false;ri=(ri+1)%roles.length;return;} }
+  tw.innerHTML=`<span style="color:var(--cyan);opacity:0.5;flex-shrink:0">▸</span>${word.slice(0,ci)}<span style="opacity:0.4">|</span>`;
+},80); }
 </script>
 </body>
 </html>

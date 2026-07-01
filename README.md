@@ -1,6 +1,6 @@
 # simonduquenne.fr — Portfolio personnel
 
-Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudiant en BTS CIEL au lycée des Métiers Sully de Nogent-le-Rotrou en alternance au CNPE de Penly (EDF).
+Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, titulaire d'un BTS CIEL obtenu au lycée des Métiers Sully de Nogent-le-Rotrou en alternance au CNPE de Penly (EDF).
 
 🌐 **[simonduquenne.fr](https://www.simonduquenne.fr)**
 
@@ -10,7 +10,7 @@ Site portfolio personnel de **Simon DUQUENNE**, technicien réseaux & IT, étudi
 
 - **Parcours professionnel** — 4 expériences dont alternance EDF CNPE Penly et SPV SDIS 28
 - **Projet BTS** — infrastructure haute disponibilité déployée au CNPE de Penly
-- **Formation** — BTS CIEL option A, Bac Pro SN, BJSP, Brevet des collèges
+- **Formation** — BTS CIEL option A ✅, Bac Pro SN ✅, BJSP ✅, Brevet des collèges ✅
 - **Compétences** — réseaux, systèmes & virtualisation, transmissions, cybersécurité industrielle
 - **CV** — téléchargeable en PDF (`cv-simon-duquenne.pdf`)
 - **Contact** — coordonnées (email, téléphone, LinkedIn), disponibilité, formulaire de contact Formspree
